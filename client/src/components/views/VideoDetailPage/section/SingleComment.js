@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Comment, Avater, Button, Input, Avatar } from 'antd'
 import axios from 'axios'
+import LikeDislikes from './LikeDislikes'
 
 function SingleComment({ postId, user, comment, refreshFunction }) {
   const [ reply, setReply ] = useState(false)
@@ -8,7 +9,7 @@ function SingleComment({ postId, user, comment, refreshFunction }) {
   const onClickReply = () => {
     setReply(!reply)
   }
-  const actions = [
+  const actions = [ <LikeDislikes userId={localStorage.getItem('userId')} commentId={comment.commentId} />,
     <span onClick={onClickReply} key="comment-basic-reply-to">답글</span>
   ]
   const onChange = (event) => {

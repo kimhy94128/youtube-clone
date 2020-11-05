@@ -60,7 +60,7 @@ function Subscriber({ userTo }) {
         }}
         onClick={onClick}
       >
-        {subscribeNumber} {subscribed ? 'Subscribed' : 'Subscribe'}
+        {subscribed ? subscribeNumber + '명의 구독자' : '구독'}
       </button>
     </div>
   )
