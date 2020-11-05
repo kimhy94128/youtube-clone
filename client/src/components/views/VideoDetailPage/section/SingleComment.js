@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Comment, Avater, Button, Input, Avatar } from 'antd'
+import { Comment, Avatar } from 'antd'
 import axios from 'axios'
 import LikeDislikes from './LikeDislikes'
 

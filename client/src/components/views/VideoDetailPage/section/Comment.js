@@ -34,7 +34,6 @@ function Comment({ videoId, commentList, refreshFunction }) {
       <p> 댓글 </p>
       <hr />
 
-      {/* 댓글 */}
       {commentList && commentList.map((comment, index) => (
           (!comment.responseTo && 
             <>
@@ -43,7 +42,6 @@ function Comment({ videoId, commentList, refreshFunction }) {
             </>
           )
       ))}
-      {/* 루트 댓글 */}
 
       <form style={{ display: 'flex' }} onSubmit={onSubmit}>
         <textarea
