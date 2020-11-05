@@ -14,7 +14,7 @@ const videoSchema = mongoose.Schema({
     type: String,
     maxlength:50
   },
-  desctiption: {
+  description: {
     type: String,
   },
   privacy: {
