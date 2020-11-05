@@ -27,6 +27,7 @@ function SingleComment({ postId, user, comment, refreshFunction }) {
       .then(response => {
         if(response.data.success){
           setContent('')
+          setReply(!reply)
           refreshFunction(response.data.result)
         } else {
           alert('댓글 작성을 실패했습니다.')

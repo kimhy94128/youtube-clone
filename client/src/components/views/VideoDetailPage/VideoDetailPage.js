@@ -26,7 +26,6 @@ function VideoDetailPage(props) {
       .then(response => {
         if(response.data.success){
           setComments(response.data.comments)
-          console.log(response.data.comments);
         } else {
           alert('댓글 정보를 가져올 수 없습니다.')
         }

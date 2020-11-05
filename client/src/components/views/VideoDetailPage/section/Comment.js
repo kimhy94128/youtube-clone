@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 import SingleComment from './SingleComment'
+import ReplyComment from './ReplyComment'
 
 function Comment({ videoId, commentList, refreshFunction }) {
   const user = useSelector(state => state.user)
@@ -36,7 +37,10 @@ function Comment({ videoId, commentList, refreshFunction }) {
       {/* 댓글 */}
       {commentList && commentList.map((comment, index) => (
           (!comment.responseTo && 
-            <SingleComment key={index} refreshFunction={refreshFunction} comment={comment} postId={videoId} user={user} />
+            <>
+              <SingleComment key={index} refreshFunction={refreshFunction} comment={comment} postId={videoId} user={user} />
+              <ReplyComment refreshFunction={refreshFunction} parentCommentId={comment._id} postId={videoId} commentList={commentList} />
+            </>
           )
       ))}
       {/* 루트 댓글 */}
