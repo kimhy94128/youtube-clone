@@ -110,6 +110,8 @@ router.post('/getVideoDetail', (req, res) => {
     .populate('writer')
     .exec((err, videoDetail) => {
       if(err) return res.status(400).send(err)
+      videoDetail.views++
+      videoDetail.save()
       return res.status(200).json({ success: true, videoDetail })
     })
 })
